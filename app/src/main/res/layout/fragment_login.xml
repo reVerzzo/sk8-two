@@ -92,7 +92,7 @@
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:hint="Contraseña"
+        android:hint="@string/contrasenia"
 
         android:textColorHint="?attr/colorOnSurface"
         app:hintTextColor="?attr/colorOnSurface"

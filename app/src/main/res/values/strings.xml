@@ -5,7 +5,8 @@
     <string name="mensaje_w">Bienvenido</string>
     <string name="iniciar_sesh">Inicia Sesión para continuar</string>
     <string name="desc_perfil">imagen de perfil</string>
-    <string name="correo">Correo:</string>>
+    <string name="correo">Correo:</string>
+    <string name="contrasenia">Contraseña:</string>
     <string name="ingresar">Ingresar</string>
     <string name="registrarse">Registrarse</string>
     <string name="reestablecer">Reestablecer Contraseña</string>
