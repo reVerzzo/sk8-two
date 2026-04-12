@@ -130,6 +130,8 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:text="@string/ingresar"
+        android:textColor="@color/blanco_humo"
+        app:backgroundTint="@color/fondo_asfalto"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/passwordTextField" />
