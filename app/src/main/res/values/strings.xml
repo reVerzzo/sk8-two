@@ -20,6 +20,6 @@
     <string name="Volver_inicio">Volver al inicio</string>
     <string name="apellidos">Apellidos:</string>
     <string name="tel">Telefono:</string>
-    <string name="fec_nac">Fecha de nacimiento>:</string>
+    <string name="fec_nac">Fecha de nacimiento:</string>
     <string name="continuar">Continuar</string>
 </resources>
