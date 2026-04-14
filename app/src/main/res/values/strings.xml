@@ -2,4 +2,12 @@
     <string name="app_name">sk8</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="mensaje_w">Bienvenido</string>
+    <string name="iniciar_sesh">Inicia Sesión para continuar</string>
+    <string name="desc_perfil">imagen de perfil</string>
+    <string name="correo">Correo:</string>
+    <string name="contrasenia">Contraseña:</string>
+    <string name="ingresar">Ingresar</string>
+    <string name="registrarse">Registrarse</string>
+    <string name="reestablecer">Reestablecer Contraseña</string>
 </resources>
