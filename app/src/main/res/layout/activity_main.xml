@@ -22,9 +22,10 @@
         app:navGraph="@navigation/nav" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/loaderView"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:visibility="visible"
+        android:visibility="invisible"
         android:background="@color/fondo_asfalto"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

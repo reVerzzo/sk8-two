@@ -1,4 +1,4 @@
-package com.example.soundplay
+package com.example.sk8
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -8,10 +8,12 @@ import android.view.ViewGroup
 import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
-import com.example.soundplay.core.FragmentCommunicator
-import com.example.soundplay.databinding.FragmentLoginBinding
+import com.example.sk8.core.FragmentCommunicator
+import com.example.sk8.databinding.FragmentLoginBinding
+import kotlin.getValue
 
 class LoginFragment : Fragment() {
+
     private var _binding: FragmentLoginBinding? = null
     private val binding get() = _binding!!
     private val viewModel by viewModels<SignInViewModel>()
@@ -29,11 +31,9 @@ class LoginFragment : Fragment() {
         _binding = FragmentLoginBinding.inflate(inflater, container, false)
         communicator = requireActivity() as FragmentCommunicator
         setupValidation()
+        communicator.manageLoader(true)
         binding.signInButton.setOnClickListener {
-            findNavController().navigate(R.id.action_loginFragment_to_registerFragment)
-        }
-        binding.registerText.setOnClickListener {
-            findNavController().navigate(R.id.action_loginFragment_to_registerFragment)
+            findNavController().navigate(R.id.action_loginFragment_to_registroFragment)
         }
         return binding.root
     }
@@ -57,7 +57,8 @@ class LoginFragment : Fragment() {
         val isPasswordValid = password.length >= 8
 
         binding.emailTil.error = if (email.isNotEmpty() && isEmailValid) null else "Correo invalido"
-        binding.passwordTil.error = if (password.isNotEmpty() && isPasswordValid) null else "Minimo 8 caracteres"
+        binding.passwordTil.error =
+            if (password.isNotEmpty() && isPasswordValid) null else "Minimo 8 caracteres"
 
         binding.signInButton.isEnabled =
             email.isNotEmpty() && password.isNotEmpty() && isEmailValid && isPasswordValid
