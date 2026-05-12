@@ -1,4 +1,4 @@
-package com.example.soundplay
+package com.example.sk8
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -20,8 +20,8 @@ class RegistroFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         _binding = FragmentRegistroBinding.inflate(inflater, container, false)
-        binding.btnRegistrar.setOnClickListener {
-            viewModel.requestSignUp(binding.correoTextFieldRegistro.toString().trim(), binding.passwordTextFieldRegistro.toString().trim())
+         binding.btnRegistrar.setOnClickListener {
+             viewModel.requestSignUp(binding.correoTextFieldRegistro.toString().trim(), binding.passwordTextFieldRegistro.toString().trim())
         }
         return binding.root
     }

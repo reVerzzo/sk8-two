@@ -155,7 +155,7 @@
         android:id="@+id/btnRegistrar"
         android:layout_width="0dp"
         android:layout_height="32dp"
-        android:text="Registrar"
+        android:text="@string/registrarse"
         android:textColor="#FFFFFF"
         android:backgroundTint="#4FC3F7"
         app:cornerRadius="16dp"
