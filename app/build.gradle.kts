@@ -6,7 +6,7 @@ plugins {
 
 android {
     namespace = "com.example.sk8"
-    compileSdk = 35
+    compileSdk = 36
 
     buildFeatures {
         viewBinding = true
