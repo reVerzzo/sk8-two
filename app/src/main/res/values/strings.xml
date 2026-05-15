@@ -22,4 +22,5 @@
     <string name="tel">Telefono:</string>
     <string name="fec_nac">Fecha de nacimiento:</string>
     <string name="continuar">Continuar</string>
+    <string name="confirmp">Confirmar contraseña: </string>
 </resources>

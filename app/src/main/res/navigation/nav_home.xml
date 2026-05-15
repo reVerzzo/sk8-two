@@ -9,5 +9,28 @@
         android:id="@+id/listFragment"
         android:name="com.example.sk8.home.list.ListFragment"
         android:label="fragment_list"
-        tools:layout="@layout/fragment_list" />
+        tools:layout="@layout/fragment_list" >
+        <action
+            android:id="@+id/action_listFragment_to_spotFragment"
+            app:destination="@id/spotFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addFragment"
+        android:name="com.example.sk8.home.add.AddFragment"
+        android:label="fragment_add"
+        tools:layout="@layout/fragment_add" />
+    <fragment
+        android:id="@+id/accountFragment"
+        android:name="com.example.sk8.home.account.AccountFragment"
+        android:label="fragment_account"
+        tools:layout="@layout/fragment_account" />
+    <fragment
+        android:id="@+id/spotFragment"
+        android:name="com.example.sk8.home.spot.SpotFragment"
+        android:label="fragment_spot"
+        tools:layout="@layout/fragment_spot">
+        <argument
+            android:name="spotId"
+            app:argType="string" />
+    </fragment>
 </navigation>
