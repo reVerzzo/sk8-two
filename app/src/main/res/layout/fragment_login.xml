@@ -57,18 +57,18 @@
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/filledTextField"
+        android:id="@+id/emailTil"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:hint="@string/correo"
 
-        android:textColorHint="?attr/colorOnSurface"
-        app:hintTextColor="?attr/colorOnSurface"
+        android:textColorHint="@color/fondo_asfalto"
+        app:hintTextColor="@color/fondo_asfalto"
 
         app:hintTextAppearance="@style/EstiloCuerpoSkate"
 
-        app:boxStrokeColor="?attr/colorOnSurface"
+        app:boxStrokeColor="@color/fondo_asfalto"
 
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
@@ -78,47 +78,49 @@
         app:layout_constraintTop_toBottomOf="@+id/view">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/emailTiet"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textEmailAddress"
-            android:textColor="?attr/colorOnSurface"
+            android:textColor="@color/fondo_asfalto"
 
             android:textAppearance="@style/EstiloCuerpoSkate" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/passwordTextField"
+        android:id="@+id/passwordTil"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:hint="@string/contrasenia"
 
-        android:textColorHint="?attr/colorOnSurface"
-        app:hintTextColor="?attr/colorOnSurface"
-        app:boxStrokeColor="?attr/colorOnSurface"
+        android:textColorHint="@color/fondo_asfalto"
+        app:hintTextColor="@color/fondo_asfalto"
+        app:boxStrokeColor="@color/fondo_asfalto"
 
         app:endIconMode="password_toggle"
-        app:endIconTint="?attr/colorOnSurface"
+        app:endIconTint="@color/fondo_asfalto"
 
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/filledTextField">
+        app:layout_constraintTop_toBottomOf="@+id/emailTil">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/passwordTiet"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
 
             android:inputType="textPassword"
-            android:textColor="?attr/colorOnSurface" />
+            android:textColor="@color/fondo_asfalto" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/signInButton"
         android:layout_width="0dp"
         android:layout_height="32dp"
         android:insetTop="0dp"
@@ -134,7 +136,7 @@
         app:backgroundTint="@color/fondo_asfalto"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/passwordTextField" />
+        app:layout_constraintTop_toBottomOf="@+id/passwordTil" />
 
     <Button
         android:id="@+id/btnRegistrarse"

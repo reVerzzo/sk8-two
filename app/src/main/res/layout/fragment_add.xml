@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/fondo_asfalto"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp"
+        android:paddingBottom="96dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Agregar spot"
+            android:textAppearance="@style/EstiloTituloSkate"
+            android:textColor="@color/blanco_humo" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/nameTil"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:hint="Nombre del spot"
+            android:textColorHint="@color/blanco_humo"
+            app:boxStrokeColor="@color/blanco_humo"
+            app:hintTextColor="@color/blanco_humo">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/nameTiet"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textCapWords"
+                android:textColor="@color/blanco_humo" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/addressTil"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:hint="Ubicacion"
+            android:textColorHint="@color/blanco_humo"
+            app:boxStrokeColor="@color/blanco_humo"
+            app:hintTextColor="@color/blanco_humo">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/addressTiet"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPostalAddress"
+                android:textColor="@color/blanco_humo" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/difficultyTil"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:hint="Dificultad"
+            android:textColorHint="@color/blanco_humo"
+            app:boxStrokeColor="@color/blanco_humo"
+            app:hintTextColor="@color/blanco_humo">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/difficultyTiet"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textCapWords"
+                android:textColor="@color/blanco_humo" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/descriptionTil"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:hint="Descripcion"
+            android:textColorHint="@color/blanco_humo"
+            app:boxStrokeColor="@color/blanco_humo"
+            app:hintTextColor="@color/blanco_humo">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/descriptionTiet"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:gravity="top"
+                android:inputType="textMultiLine|textCapSentences"
+                android:textColor="@color/blanco_humo" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/saveSpotButton"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:layout_marginTop="22dp"
+            android:backgroundTint="@color/blanco_humo"
+            android:enabled="false"
+            android:text="Guardar spot"
+            android:textColor="@color/fondo_asfalto"
+            android:textStyle="bold" />
+    </LinearLayout>
+</ScrollView>

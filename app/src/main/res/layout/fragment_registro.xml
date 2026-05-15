@@ -12,8 +12,8 @@
 
     <View
         android:id="@+id/view2"
-        android:layout_width="wrap_content"
-        android:layout_height="371dp"
+        android:layout_width="414dp"
+        android:layout_height="286dp"
         android:background="@color/blanco_humo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -68,7 +68,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/nombreTextField"
+        android:id="@+id/nombreTil"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -87,6 +87,7 @@
         app:layout_constraintTop_toBottomOf="@+id/view2">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/nombreTiet"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
@@ -95,11 +96,11 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/correoTextFieldRegistro"
+        android:id="@+id/correoTil"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:hint="Correo:"
+        android:hint="@string/correo"
 
         android:textColorHint="?attr/colorOnBackground"
         app:hintTextColor="?attr/colorOnBackground"
@@ -111,9 +112,10 @@
         android:layout_marginEnd="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nombreTextField">
+        app:layout_constraintTop_toBottomOf="@+id/nombreTil">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/correoTiet"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textEmailAddress"
@@ -122,11 +124,11 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/passwordTextFieldRegistro"
+        android:id="@+id/passwordTil"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:hint="Contraseña:"
+        android:hint="@string/contrasenia"
 
         android:textColorHint="?attr/colorOnBackground"
         app:hintTextColor="?attr/colorOnBackground"
@@ -141,9 +143,10 @@
         android:layout_marginEnd="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/correoTextFieldRegistro">
+        app:layout_constraintTop_toBottomOf="@+id/correoTil">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/passwordTiet"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textPassword"
@@ -151,25 +154,57 @@
             android:textAppearance="@style/EstiloCuerpoSkate" />
     </com.google.android.material.textfield.TextInputLayout>
 
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/confirmPasswordTil"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:hint="@string/confirmp"
+        android:textColorHint="?attr/colorOnBackground"
+
+        app:boxStrokeColor="?attr/colorOnBackground"
+        app:endIconMode="password_toggle"
+
+        app:endIconTint="?attr/colorOnBackground"
+        app:hintTextAppearance="@style/EstiloCuerpoSkate"
+        app:hintTextColor="?attr/colorOnBackground"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/passwordTil">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/confirmPasswordTiet"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:textAppearance="@style/EstiloCuerpoSkate"
+            android:textColor="?attr/colorOnBackground" />
+    </com.google.android.material.textfield.TextInputLayout>
+
     <Button
         android:id="@+id/btnRegistrar"
         android:layout_width="0dp"
         android:layout_height="32dp"
-        android:text="Registrar"
-        android:textColor="#FFFFFF"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
         android:backgroundTint="#4FC3F7"
-        app:cornerRadius="16dp"
 
         android:insetTop="0dp"
         android:insetBottom="0dp"
         android:paddingTop="0dp"
         android:paddingBottom="0dp"
 
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="16dp"
+        android:text="@string/registrarse"
+        android:textColor="#FFFFFF"
+        app:cornerRadius="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/passwordTextFieldRegistro" />
+        app:layout_constraintTop_toBottomOf="@+id/confirmPasswordTil" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
