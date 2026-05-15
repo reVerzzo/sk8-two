@@ -4,5 +4,6 @@ import com.example.sk8.core.ResponseService
 import com.example.sk8.model.UserProfile
 
 interface UserService {
-    suspend fun saveUser(UserProfile: UserProfile): ResponseService<Unit>
+    suspend fun saveUserInfo(userProfile: UserProfile): ResponseService<Unit>
+    suspend fun getUserInfo(uid: String): ResponseService<UserProfile>
 }

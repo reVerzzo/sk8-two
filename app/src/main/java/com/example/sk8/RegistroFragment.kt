@@ -1,6 +1,5 @@
 package com.example.sk8
 
-
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -12,7 +11,6 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import androidx.navigation.fragment.findNavController
-import com.example.sk8.SignInViewModel
 import com.example.sk8.core.FragmentCommunicator
 import com.example.sk8.core.ResponseService
 import com.example.sk8.databinding.FragmentRegistroBinding
@@ -26,12 +24,11 @@ class RegistroFragment : Fragment() {
     private val viewModel by viewModels<RegisterViewModel>()
     private lateinit var communicator: FragmentCommunicator
 
-
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
+    ): View {
         _binding = FragmentRegistroBinding.inflate(inflater, container, false)
         communicator = requireActivity() as FragmentCommunicator
         setupValidation()
@@ -42,7 +39,6 @@ class RegistroFragment : Fragment() {
 
     private fun setupValidation() {
         binding.btnRegistrar.isEnabled = false
-        val watcher = { validateAndEnable() }
         binding.correoTiet.addTextChangedListener { validateAndEnable() }
         binding.passwordTiet.addTextChangedListener { validateAndEnable() }
         binding.confirmPasswordTiet.addTextChangedListener { validateAndEnable() }
@@ -55,21 +51,18 @@ class RegistroFragment : Fragment() {
 
         binding.correoTil.error = viewModel.validateEmail(email)
         binding.passwordTil.error = viewModel.validatePassword(pass)
-        binding.confirmPasswordTil.error =
-            viewModel.validateConfirmPassword(pass, confirm)
-
-        binding.btnRegistrar.isEnabled =
-            viewModel.isRegisterFormValid(email, pass, confirm)
+        binding.confirmPasswordTil.error = viewModel.validateConfirmPassword(pass, confirm)
+        binding.btnRegistrar.isEnabled = viewModel.isRegisterFormValid(email, pass, confirm)
     }
 
     private fun setupClickListeners() {
+        binding.arrowBack.setOnClickListener {
+            findNavController().navigateUp()
+        }
         binding.btnRegistrar.setOnClickListener {
             val email = binding.correoTiet.text.toString().trim()
             val password = binding.passwordTiet.text.toString().trim()
             viewModel.requestSignUp(email, password)
-        }
-        binding.btnRegistrar.setOnClickListener {
-            findNavController().navigateUp()
         }
     }
 
@@ -84,13 +77,12 @@ class RegistroFragment : Fragment() {
                         }
                         is ResponseService.Success -> {
                             communicator.manageLoader(false)
-                            // TODO: navegar a pantalla de datos personales
+                            findNavController().navigate(R.id.action_registroFragment_to_personalInfoFragment)
                         }
                         is ResponseService.Error -> {
                             communicator.manageLoader(false)
                             binding.btnRegistrar.isEnabled = true
-                            Snackbar.make(binding.root, state.error,
-                                Snackbar.LENGTH_LONG).show()
+                            Snackbar.make(binding.root, state.error, Snackbar.LENGTH_LONG).show()
                         }
                         null -> Unit
                     }
@@ -99,4 +91,8 @@ class RegistroFragment : Fragment() {
         }
     }
 
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
 }

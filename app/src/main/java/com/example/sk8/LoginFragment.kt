@@ -67,6 +67,10 @@ class LoginFragment : Fragment() {
             findNavController()
                 .navigate(R.id.action_loginFragment_to_registroFragment)
         }
+        binding.btnReestablecer.setOnClickListener {
+            findNavController()
+                .navigate(R.id.action_loginFragment_to_recuperarCFragment)
+        }
     }
     private fun observeState() {
         viewLifecycleOwner.lifecycleScope.launch {

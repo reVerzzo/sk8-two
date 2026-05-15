@@ -63,12 +63,12 @@
         android:layout_height="wrap_content"
         android:hint="@string/correo"
 
-        android:textColorHint="?attr/colorOnSurface"
-        app:hintTextColor="?attr/colorOnSurface"
+        android:textColorHint="@color/fondo_asfalto"
+        app:hintTextColor="@color/fondo_asfalto"
 
         app:hintTextAppearance="@style/EstiloCuerpoSkate"
 
-        app:boxStrokeColor="?attr/colorOnSurface"
+        app:boxStrokeColor="@color/fondo_asfalto"
 
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
@@ -82,7 +82,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textEmailAddress"
-            android:textColor="?attr/colorOnSurface"
+            android:textColor="@color/fondo_asfalto"
 
             android:textAppearance="@style/EstiloCuerpoSkate" />
 
@@ -95,12 +95,12 @@
         android:layout_height="wrap_content"
         android:hint="@string/contrasenia"
 
-        android:textColorHint="?attr/colorOnSurface"
-        app:hintTextColor="?attr/colorOnSurface"
-        app:boxStrokeColor="?attr/colorOnSurface"
+        android:textColorHint="@color/fondo_asfalto"
+        app:hintTextColor="@color/fondo_asfalto"
+        app:boxStrokeColor="@color/fondo_asfalto"
 
         app:endIconMode="password_toggle"
-        app:endIconTint="?attr/colorOnSurface"
+        app:endIconTint="@color/fondo_asfalto"
 
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
@@ -115,7 +115,7 @@
             android:layout_height="wrap_content"
 
             android:inputType="textPassword"
-            android:textColor="?attr/colorOnSurface" />
+            android:textColor="@color/fondo_asfalto" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
