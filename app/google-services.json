@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "927764833375",
+    "project_id": "ssk8-e602b",
+    "storage_bucket": "ssk8-e602b.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:927764833375:android:5c3cc82cfd18bd984667ea",
+        "android_client_info": {
+          "package_name": "com.example.sk8"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBd_-LhgPAPjtS7AkVN0LasZuahyg39UnU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

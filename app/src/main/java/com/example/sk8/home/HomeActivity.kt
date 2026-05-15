@@ -1,22 +1,22 @@
-package com.example.sk8
+package com.example.sk8.home
 
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import androidx.core.view.isVisible
-import com.example.sk8.core.FragmentCommunicator
-import com.example.sk8.databinding.ActivityMainBinding
+import com.example.sk8.R
+import com.example.sk8.databinding.ActivityHomeBinding
 
-class MainActivity : AppCompatActivity(), FragmentCommunicator {
-    private lateinit var binding: ActivityMainBinding
+class HomeActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityHomeBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        binding= ActivityMainBinding.inflate(layoutInflater)
+        binding = ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        setContentView(R.layout.activity_home)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
@@ -24,7 +24,5 @@ class MainActivity : AppCompatActivity(), FragmentCommunicator {
         }
     }
 
-    override fun manageLoader(isVisible: Boolean){
-        binding.loaderView.isVisible = isVisible
-    }
+    fun setupNavigation()
 }
