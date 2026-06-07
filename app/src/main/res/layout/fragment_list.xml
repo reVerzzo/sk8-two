@@ -13,26 +13,29 @@
         android:textAppearance="@style/EstiloTituloSkate"
         android:textColor="@color/fondo_asfalto" />
 
-    <ScrollView
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvSpots"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginTop="20dp"
         android:layout_weight="1"
-        android:paddingBottom="80dp">
+        android:clipToPadding="false"
+        android:paddingBottom="80dp" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
+        android:visibility="gone" />
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/blanco_tarjeta"
-                android:padding="18dp"
-                android:text="Spot ejemplo: Escaleras del parque\nUbicacion: Centro\nDificultad: Media"
-                android:textColor="@color/fondo_asfalto"
-                android:textSize="16sp" />
-        </LinearLayout>
-    </ScrollView>
+    <TextView
+        android:id="@+id/emptyState"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Aun no tienes spots registrados."
+        android:textColor="@color/fondo_asfalto"
+        android:visibility="gone" />
 </LinearLayout>

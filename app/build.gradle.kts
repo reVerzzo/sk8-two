@@ -48,6 +48,8 @@ dependencies {
     implementation(libs.androidx.constraintlayout)
     implementation(libs.androidx.navigation.fragment.ktx)
     implementation(libs.androidx.navigation.ui.ktx)
+    implementation(libs.androidx.recyclerview)
+    implementation(libs.play.services.location)
     implementation(libs.lottie)
     implementation(platform(libs.firebase.bom))
     implementation(libs.firebase.firestore)

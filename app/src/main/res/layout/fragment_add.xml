@@ -14,6 +14,7 @@
         android:paddingBottom="96dp">
 
         <TextView
+            android:id="@+id/titleText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Agregar spot"
@@ -40,44 +41,6 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/addressTil"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="14dp"
-            android:hint="Ubicacion"
-            android:textColorHint="@color/blanco_humo"
-            app:boxStrokeColor="@color/blanco_humo"
-            app:hintTextColor="@color/blanco_humo">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/addressTiet"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="textPostalAddress"
-                android:textColor="@color/blanco_humo" />
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/difficultyTil"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="14dp"
-            android:hint="Dificultad"
-            android:textColorHint="@color/blanco_humo"
-            app:boxStrokeColor="@color/blanco_humo"
-            app:hintTextColor="@color/blanco_humo">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/difficultyTiet"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="textCapWords"
-                android:textColor="@color/blanco_humo" />
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/descriptionTil"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
@@ -97,13 +60,20 @@
                 android:textColor="@color/blanco_humo" />
         </com.google.android.material.textfield.TextInputLayout>
 
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            android:visibility="gone" />
+
         <Button
             android:id="@+id/saveSpotButton"
             android:layout_width="match_parent"
             android:layout_height="52dp"
             android:layout_marginTop="22dp"
             android:backgroundTint="@color/blanco_humo"
-            android:enabled="false"
             android:text="Guardar spot"
             android:textColor="@color/fondo_asfalto"
             android:textStyle="bold" />
