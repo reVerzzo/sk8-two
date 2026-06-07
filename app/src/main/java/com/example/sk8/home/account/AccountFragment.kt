@@ -19,11 +19,7 @@ class AccountFragment : Fragment() {
     private val binding get() = _binding!!
     private val repository = UserRepository()
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         _binding = FragmentAccountBinding.inflate(inflater, container, false)
         setupClickListeners()
         loadProfile()
@@ -68,7 +64,6 @@ class AccountFragment : Fragment() {
                         ${buildAuthProfileText(user.email)}
 
                         No se pudo cargar el perfil guardado.
-                        Revisa las reglas de Firestore para permitir lectura a usuarios autenticados.
                     """.trimIndent()
                 }
                 ResponseService.Loading -> Unit
