@@ -1,59 +1,92 @@
 package com.example.sk8
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
+import android.util.Patterns
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.widget.addTextChangedListener
+import androidx.fragment.app.Fragment
+import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
+import com.example.sk8.core.AuthRepository
+import com.example.sk8.core.ResponseService
+import com.example.sk8.databinding.FragmentRecuperarCBinding
+import com.google.android.material.snackbar.Snackbar
+import kotlinx.coroutines.launch
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [RecuperarCFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class RecuperarCFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+    private var _binding: FragmentRecuperarCBinding? = null
+    private val binding get() = _binding!!
+    private val repository = AuthRepository()
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
+        _binding = FragmentRecuperarCBinding.inflate(inflater, container, false)
+        setupValidation()
+        setupClickListeners()
+        return binding.root
+    }
+
+    private fun setupValidation() {
+        binding.btnRecuperar.isEnabled = false
+        binding.emailTiet.addTextChangedListener {
+            val email = binding.emailTiet.text.toString().trim()
+            binding.tilEmail.error = validateEmail(email)
+            binding.btnRecuperar.isEnabled = validateEmail(email) == null
         }
     }
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_recuperar_c, container, false)
+    private fun setupClickListeners() {
+        binding.btnVolver.setOnClickListener {
+            findNavController().navigateUp()
+        }
+
+        binding.btnRecuperar.setOnClickListener {
+            val email = binding.emailTiet.text.toString().trim()
+            val error = validateEmail(email)
+            if (error != null) {
+                binding.tilEmail.error = error
+                return@setOnClickListener
+            }
+            requestPasswordReset(email)
+        }
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment RecuperarCFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            RecuperarCFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
+    private fun requestPasswordReset(email: String) {
+        binding.btnRecuperar.isEnabled = false
+        viewLifecycleOwner.lifecycleScope.launch {
+            when (val response = repository.requestPasswordReset(email)) {
+                is ResponseService.Success -> {
+                    showMessage("Te enviamos un correo para restablecer tu contrasena.")
+                    findNavController().navigateUp()
                 }
+                is ResponseService.Error -> {
+                    binding.btnRecuperar.isEnabled = true
+                    showMessage(response.error)
+                }
+                ResponseService.Loading -> Unit
             }
+        }
+    }
+
+    private fun validateEmail(email: String): String? {
+        if (email.isBlank()) return "El correo es requerido"
+        if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) return "Correo invalido"
+        return null
+    }
+
+    private fun showMessage(message: String) {
+        if (_binding != null) {
+            Snackbar.make(binding.root, message, Snackbar.LENGTH_LONG).show()
+        }
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 }
